@@ -20,5 +20,13 @@ class BayutSpider(scrapy.Spider):
     
     def parse_property(self,response):
         item = BayutScraperItem()
+
         item["url"] = response.url
+        
+        reference_number = response.xpath('//span[@aria-label="Reference"]/text()').get()
+        if reference_number:
+            reference_number = reference_number.strip()
+        item["reference_number"] = reference_number
+        
         yield item
+        
