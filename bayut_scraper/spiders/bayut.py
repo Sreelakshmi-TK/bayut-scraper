@@ -10,4 +10,12 @@ class BayutSpider(scrapy.Spider):
         
         for card in property_cards:
             link = card.xpath(".//a/@href").get()
-            print(link)
+            
+            yield response.follow(
+                url=link,
+                callback = self.parse_property
+            )
+
+    
+    def parse_property(self,response):
+        print(response.css("title::text").get())
