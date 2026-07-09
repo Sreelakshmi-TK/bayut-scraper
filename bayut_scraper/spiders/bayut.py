@@ -28,5 +28,28 @@ class BayutSpider(scrapy.Spider):
             reference_number = reference_number.strip()
         item["reference_number"] = reference_number
         
-        yield item
+        property_id = response.url.split("details-")[1].split(".html")[0]
+        item["id"] = property_id
+
+        broker_display_name = response.xpath('//h3[@aria-label="Agency name"]/text()').get()
+        if broker_display_name:
+            broker_display_name = broker_display_name.strip()
+        item["broker_display_name"] = broker_display_name
+
+        title = response.xpath('//div[@aria-label="Property overview"]//h1/text()').get()
+        if title:
+            title = title.strip()
+        item["title"] = title
+
+        property_type = response.xpath('//span[@aria-label="Type"]/text()').get()
+        if property_type:
+            property_type = property_type.strip()
+        item["property_type"] = property_type
+
+        description = response.xpath('//div[@aria-label="Property description"]//span/text()').get()
+        if description:
+            description = description.strip()
+        item["description"] = description
+
+        yield item        
         
