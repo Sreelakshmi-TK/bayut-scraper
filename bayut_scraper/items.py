@@ -1,12 +1,22 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
 import scrapy
 
-
 class BayutScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    url = scrapy.Field()
+    reference_number = scrapy.Field()
+    id = scrapy.Field()
+    broker_display_name = scrapy.Field()
+    title = scrapy.Field()
+    property_type = scrapy.Field()
+    description = scrapy.Field()
+    location = scrapy.Field()
+    price = scrapy.Field()
+    currency = scrapy.Field()
+    bedrooms = scrapy.Field()
+    bathrooms = scrapy.Field()
+    furnished = scrapy.Field()
+    amenities = scrapy.Field()
+    details = scrapy.Field()
+    agent_name = scrapy.Field()
+    property_image_urls = scrapy.Field()
+    completion_status = scrapy.Field()
+    ownership = scrapy.Field()

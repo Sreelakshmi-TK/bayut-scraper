@@ -1,4 +1,5 @@
 import scrapy 
+from bayut_scraper.items import BayutScraperItem
 
 class BayutSpider(scrapy.Spider):
     name = "bayut"
@@ -18,4 +19,6 @@ class BayutSpider(scrapy.Spider):
 
     
     def parse_property(self,response):
-        print(response.css("title::text").get())
+        item = BayutScraperItem()
+        item["url"] = response.url
+        yield item
