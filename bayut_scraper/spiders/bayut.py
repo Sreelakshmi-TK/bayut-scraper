@@ -3,53 +3,79 @@ from bayut_scraper.items import BayutScraperItem
 
 class BayutSpider(scrapy.Spider):
     name = "bayut"
+    
     start_urls = ["https://www.bayut.eg/en/egypt/properties-for-sale/"]
+
+    @staticmethod
+    def clean_text(value):
+        return " ".join(value.split()) if value else None
 
     def parse(self, response):
         property_cards = response.xpath("//li[@role='article']")
-        print(f"found {len(property_cards)} property cards")
+        self.logger.info("Found %d property cards", len(property_cards))
         
         for card in property_cards:
             link = card.xpath(".//a/@href").get()
             
-            yield response.follow(
-                url=link,
-                callback = self.parse_property
-            )
+            if link:
+                yield response.follow(
+                    url=link,
+                    callback=self.parse_property
+                )
 
     
-    def parse_property(self,response):
+    def parse_property(self, response):
         item = BayutScraperItem()
 
+        # URL
         item["url"] = response.url
-        
-        reference_number = response.xpath('//span[@aria-label="Reference"]/text()').get()
-        if reference_number:
-            reference_number = reference_number.strip()
-        item["reference_number"] = reference_number
-        
-        property_id = response.url.split("details-")[1].split(".html")[0]
+
+        # Reference Number
+        item["reference_number"] = self.clean_text(
+            response.xpath( '//span[@aria-label="Reference"]/text()').get()
+        )
+
+        # Property ID
+        property_id = None
+        if "details-" in response.url:
+            property_id = response.url.split("details-")[1].split(".html")[0]
         item["id"] = property_id
 
-        broker_display_name = response.xpath('//h3[@aria-label="Agency name"]/text()').get()
-        if broker_display_name:
-            broker_display_name = broker_display_name.strip()
-        item["broker_display_name"] = broker_display_name
+        # Broker Display Name
+        item["broker_display_name"] = self.clean_text(
+            response.xpath('//h3[@aria-label="Agency name"]/text()').get()
+        )
 
-        title = response.xpath('//div[@aria-label="Property overview"]//h1/text()').get()
-        if title:
-            title = title.strip()
-        item["title"] = title
+        # Title
+        item["title"] = self.clean_text(
+            response.xpath('//div[@aria-label="Property overview"]//h1/text()').get()
+        )
 
-        property_type = response.xpath('//span[@aria-label="Type"]/text()').get()
-        if property_type:
-            property_type = property_type.strip()
-        item["property_type"] = property_type
+        # Property Type
+        item["property_type"] = self.clean_text(
+            response.xpath('//span[@aria-label="Type"]/text()').get()
+        )
 
-        description = response.xpath('//div[@aria-label="Property description"]//span/text()').get()
-        if description:
-            description = description.strip()
-        item["description"] = description
+        # Description
+        description = response.xpath( '//div[@aria-label="Property description"]//text()[not(parent::button)]').getall()
 
-        yield item        
+        item["description"] = self.clean_text(
+            " ".join(description)
+        )
+
+        #  location   
+        item["location"] = self.clean_text(
+            response.xpath('//div[@aria-label="Property header"]/text()').get()
+        )
+        # Price
+        item["price"] = self.clean_text(
+            response.xpath('//span[@aria-label="Price"]/text()').get()
+        )
+
+        #Currency
+        item["currency"] = self.clean_text(
+            response.xpath('//span[@aria-label="Currency"]/text()').get()
+        )
+
+        yield item      
         
