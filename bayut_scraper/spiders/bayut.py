@@ -78,14 +78,25 @@ class BayutSpider(scrapy.Spider):
         )
 
         # Bedrooms
-        item["bedrooms"] = self.clean_text(
+        bedrooms = self.clean_text(
             response.xpath('//span[@aria-label="Beds"]/span/text()').get()
         )
 
+        if bedrooms:
+            bedrooms = bedrooms.split()[0]
+
+        item["bedrooms"] = bedrooms
+
         # Bathrooms
-        item["bathrooms"] = self.clean_text(
-            response.xpath('//span[@aria-label="Baths"]/span/text()').get()
+        bathrooms = self.clean_text(
+            response.xpath('//span[@aria-label="Bath"]/span/text()').get()
         )
+
+        if bathrooms:
+            bathrooms = bathrooms.split()[0]
+
+        item["bathrooms"] = bathrooms
+
         # Furnished
         item["furnished"] = self.clean_text(
             response.xpath('//span[@aria-label="Furnishing"]/text()').get()
@@ -103,6 +114,27 @@ class BayutSpider(scrapy.Spider):
         # Details
         item["details"] = self.clean_text(
             response.xpath('//span[@aria-label="Area"]//text()').get()
+        )
+
+        #Agent name
+        item["agent_name"] = self.clean_text(
+            response.xpath('//a[@aria-label="Agent name"]/h2/text()').get()
+        )
+
+        # property_image_urls
+        item["property_image_urls"] = response.xpath(
+            '//div[@aria-label="Gallery dialog hidden"]'
+            '//div[@aria-label="Gallery dialog photo grid"]'
+            '//img/@src').getall()
+        
+        #Completion_status
+        item["completion_status"] = self.clean_text(
+            response.xpath('//span[@aria-label="Completion status"]/text()').get()
+        )
+
+        #ownership
+        item["ownership"] = self.clean_text(
+            response.xpath('//span[@aria-label="Ownership"]/text()').get()
         )
 
         yield item      
