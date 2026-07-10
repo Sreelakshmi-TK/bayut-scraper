@@ -77,5 +77,33 @@ class BayutSpider(scrapy.Spider):
             response.xpath('//span[@aria-label="Currency"]/text()').get()
         )
 
+        # Bedrooms
+        item["bedrooms"] = self.clean_text(
+            response.xpath('//span[@aria-label="Beds"]/span/text()').get()
+        )
+
+        # Bathrooms
+        item["bathrooms"] = self.clean_text(
+            response.xpath('//span[@aria-label="Baths"]/span/text()').get()
+        )
+        # Furnished
+        item["furnished"] = self.clean_text(
+            response.xpath('//span[@aria-label="Furnishing"]/text()').get()
+        )
+
+        # Amenities
+        amenities = [
+            self.clean_text(text)
+            for text in response.xpath('//div[@id="property-amenity-dialog"]//span[@class="c0327f5b"]/text()').getall()
+        ]
+        item["amenities"] = " | ".join(
+            amenity for amenity in amenities if amenity
+        )
+
+        # Details
+        item["details"] = self.clean_text(
+            response.xpath('//span[@aria-label="Area"]//text()').get()
+        )
+
         yield item      
         
