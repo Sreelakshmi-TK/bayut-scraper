@@ -89,7 +89,7 @@ class BayutSpider(scrapy.Spider):
 
         # Bathrooms
         bathrooms = self.clean_text(
-            response.xpath('//span[@aria-label="Bath"]/span/text()').get()
+            response.xpath('//span[@aria-label="Baths"]/span/text()').get()
         )
 
         if bathrooms:
