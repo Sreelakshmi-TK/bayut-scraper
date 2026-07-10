@@ -6,11 +6,17 @@ class BayutSpider(scrapy.Spider):
     
     start_urls = ["https://www.bayut.eg/en/egypt/properties-for-sale/"]
 
+    page_count = 0
+
     @staticmethod
     def clean_text(value):
         return " ".join(value.split()) if value else None
 
     def parse(self, response):
+        self.page_count += 1
+
+        self.logger.info("Processing listing page %d", self.page_count)
+
         property_cards = response.xpath("//li[@role='article']")
         self.logger.info("Found %d property cards", len(property_cards))
         
@@ -23,6 +29,15 @@ class BayutSpider(scrapy.Spider):
                     callback=self.parse_property
                 )
 
+        next_page = response.xpath('//a[@title="Next"]/@href').get()
+
+        if next_page and self.page_count < 3:
+            self.logger.info("Following next page: %s", next_page)
+
+            yield response.follow(
+                next_page,
+                callback=self.parse
+            )
     
     def parse_property(self, response):
         item = BayutScraperItem()
