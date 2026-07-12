@@ -1,0 +1,928 @@
+2026-07-11 23:20:20 [scrapy.utils.log] INFO: Scrapy 2.16.0 started (bot: bayut_scraper)
+2026-07-11 23:20:20 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.1',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.4.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]',
+ 'pyOpenSSL': '26.3.0 (OpenSSL 4.0.1 9 Jun 2026)',
+ 'cryptography': '49.0.0',
+ 'Platform': 'Linux-6.14.0-27-generic-x86_64-with-glibc2.39'}
+2026-07-11 23:20:20 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-07-11 23:20:20 [asyncio] DEBUG: Using selector: EpollSelector
+2026-07-11 23:20:20 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-07-11 23:20:20 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-07-11 23:20:20 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-07-11 23:20:20 [scrapy.extensions.telnet] INFO: Telnet Password: 33bc94a25b7866b5
+2026-07-11 23:20:20 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.closespider.CloseSpider',
+ 'scrapy.extensions.logstats.LogStats']
+2026-07-11 23:20:20 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'bayut_scraper',
+ 'CLOSESPIDER_ITEMCOUNT': '1',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'bayut_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['bayut_scraper.spiders']}
+2026-07-11 23:20:20 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-07-11 23:20:20 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2026-07-11 23:20:20 [scrapy.middleware] INFO: Enabled item pipelines:
+['bayut_scraper.pipelines.SQLitePipeline']
+2026-07-11 23:20:20 [py.warnings] WARNING: /home/sreelakshmi/Desktop/dme_assignment/venv/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:43: ScrapyDeprecationWarning: SQLitePipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-07-11 23:20:20 [py.warnings] WARNING: /home/sreelakshmi/Desktop/dme_assignment/venv/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:46: ScrapyDeprecationWarning: SQLitePipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-07-11 23:20:20 [py.warnings] WARNING: /home/sreelakshmi/Desktop/dme_assignment/venv/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:49: ScrapyDeprecationWarning: SQLitePipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-07-11 23:20:20 [scrapy.core.engine] INFO: Spider opened
+2026-07-11 23:20:20 [bayut] INFO: Opening SQLite database...
+2026-07-11 23:20:20 [bayut] INFO: SQLite database ready.
+2026-07-11 23:20:20 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-07-11 23:20:20 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-07-11 23:20:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/robots.txt> (referer: None)
+2026-07-11 23:20:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/egypt/properties-for-sale/> (referer: None)
+2026-07-11 23:20:22 [bayut] INFO: Processing listing page 1
+2026-07-11 23:20:22 [bayut] INFO: Found 24 property cards
+2026-07-11 23:20:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/egypt/properties-for-sale/page-2/> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:24 [bayut] INFO: Processing listing page 2
+2026-07-11 23:20:24 [bayut] INFO: Found 24 property cards
+2026-07-11 23:20:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770153.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:25 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:25 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770153.html', 'reference_number': 'Bayut - KATAMEYYYA', 'id': '503770153', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'FOR SALE NORTH COAST KATAMEYA FURNISHED SERVICE CHALET WITH THE LOWEST PRICES!!!', 'property_type': 'Chalet', 'description': "FOR SALE NORTH COAST SERVICED FURNISHED CHALET WITH THE LOWEST PRICE!!! CONTAINS: 2 BEDROOMS. 2 BATHROOMS. GARDEN. ---------------------------------------------- Katameya Coast is a premium 205-acre luxury resort in Egypt's Ras El Hekma region (Kilometer 180 on the Alexandria-Matrouh Road). Developed by Starlight Developments, it features modern, minimalist architecture built across 7 cascading levels, ensuring uninterrupted Mediterranean Sea views. Location & Accessibility Address: Kilo 180, Alexandria-Marsa Matrouh Road, Ras El Hekma. Accessibility: Easily reached via the New Fouka Road, directly connecting the area to Cairo. It is located near Sidi Abdel Rahman and New Alamein City. Nearby Projects: Located close to La Vista Ras El Hekma, Mountain View, and Hacienda Bay. Master Plan & Architecture The Vision: Designed by AKA (an international architectural firm) to maximize sea views across the development. Waterfront: The resort features over 700 meters of beachfront. The Crystal Edition: Features a large 45,000-square-meter crystal lagoon. Finishing: Units are delivered fully finished with fitted kitchens and air conditioning", 'location': 'Katameya Coast, North Coast, Matruh', 'price': '16,000,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '2', 'furnished': 'Furnished', 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | Electricity Backup | Pets Allowed | Electricity Meter | Centrally Air-Conditioned | Sea view | Central Heating | Water Meter | Double Glazed Windows | Storage Areas | Natural Gas | Landline | Study Room | Central A/C & heating | Balcony or Terrace | Lobby in Building | Service Elevators | Prayer Room | Reception/Waiting Room | First Aid Medical Center | Gym or Health Club | Facilities for Disabled | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Business Center | Conference Room | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Laundry Facility | Broadband Internet | Satellite/Cable TV | Intercom | ATM Facility | 24 Hours Concierge | Maids Room | Freehold', 'details': '165 Sq. M.', 'agent_name': 'Lamis Nagy', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45653829-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653830-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653831-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653832-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653833-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653834-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653835-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653836-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653837-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45653838-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770153.html>
+{'agent_name': 'Lamis Nagy',
+ 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | '
+              'Electricity Backup | Pets Allowed | Electricity Meter | '
+              'Centrally Air-Conditioned | Sea view | Central Heating | Water '
+              'Meter | Double Glazed Windows | Storage Areas | Natural Gas | '
+              'Landline | Study Room | Central A/C & heating | Balcony or '
+              'Terrace | Lobby in Building | Service Elevators | Prayer Room | '
+              'Reception/Waiting Room | First Aid Medical Center | Gym or '
+              'Health Club | Facilities for Disabled | Swimming Pool | Jacuzzi '
+              '| Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn '
+              'or Garden | Barbeque Area | Cafeteria or Canteen | Waste '
+              'Disposal | Maintenance Staff | Cleaning Services | Business '
+              'Center | Conference Room | Security Staff | CCTV Security | '
+              'Shared Kitchen | Laundry Room | Laundry Facility | Broadband '
+              'Internet | Satellite/Cable TV | Intercom | ATM Facility | 24 '
+              'Hours Concierge | Maids Room | Freehold',
+ 'bathrooms': '2',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'FOR SALE NORTH COAST SERVICED FURNISHED CHALET WITH THE '
+                'LOWEST PRICE!!! CONTAINS: 2 BEDROOMS. 2 BATHROOMS. GARDEN. '
+                '---------------------------------------------- Katameya Coast '
+                "is a premium 205-acre luxury resort in Egypt's Ras El Hekma "
+                'region (Kilometer 180 on the Alexandria-Matrouh Road). '
+                'Developed by Starlight Developments, it features modern, '
+                'minimalist architecture built across 7 cascading levels, '
+                'ensuring uninterrupted Mediterranean Sea views. Location & '
+                'Accessibility Address: Kilo 180, Alexandria-Marsa Matrouh '
+                'Road, Ras El Hekma. Accessibility: Easily reached via the New '
+                'Fouka Road, directly connecting the area to Cairo. It is '
+                'located near Sidi Abdel Rahman and New Alamein City. Nearby '
+                'Projects: Located close to La Vista Ras El Hekma, Mountain '
+                'View, and Hacienda Bay. Master Plan & Architecture The '
+                'Vision: Designed by AKA (an international architectural firm) '
+                'to maximize sea views across the development. Waterfront: The '
+                'resort features over 700 meters of beachfront. The Crystal '
+                'Edition: Features a large 45,000-square-meter crystal lagoon. '
+                'Finishing: Units are delivered fully finished with fitted '
+                'kitchens and air conditioning',
+ 'details': '165 Sq. M.',
+ 'furnished': 'Furnished',
+ 'id': '503770153',
+ 'location': 'Katameya Coast, North Coast, Matruh',
+ 'ownership': 'Primary',
+ 'price': '16,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45653829-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653830-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653831-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653832-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653833-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653834-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653835-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653836-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653837-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45653838-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - KATAMEYYYA',
+ 'title': 'FOR SALE NORTH COAST KATAMEYA FURNISHED SERVICE CHALET WITH THE '
+          'LOWEST PRICES!!!',
+ 'url': 'https://www.bayut.eg/en/property/details-503770153.html'}
+2026-07-11 23:20:25 [scrapy.core.engine] INFO: Closing spider (closespider_itemcount)
+2026-07-11 23:20:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770183.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:27 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:27 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770183.html', 'reference_number': 'Bayut - 1476-A0Rj2U', 'id': '503770183', 'broker_display_name': 'Start Homes 2', 'title': 'A distinctive apartment for sale in Al Rehab City - 155 meters - Phase Two - characterized by its proximity to all services', 'property_type': 'Apartment', 'description': 'Apartment for sale in Al Rehab, New Cairo at a special price for a quick sale (Phase 2) Prime location, steps from the old market and food court. Apartment area: 155 square meters. Consists of: 3-piece reception + 3 bedrooms (including a living room) + 3 bathrooms + kitchen. Fully finished to a high standard. Serious owner. Agent directly from the owner. Immediate occupancy. Attractive price for quick sale: 7,800,000 EGP. =================== Agent directly from the owner. Contact: Mariam Risk Start Homes Real Estate Marketing and Investment Company in Al Rehab and Madinaty Gateway Mall - Office No. AF6 - First Floor - Al Rehab City - New Cairo', 'location': 'Rehab City, New Cairo, Cairo', 'price': '7,800,000', 'currency': 'EGP', 'bedrooms': '3', 'bathrooms': '3', 'furnished': 'Furnished', 'amenities': 'Built in Kitchen Appliances | Covered parking | Parking Spaces | : 1 | Electricity Meter | Water Meter | Natural Gas | Balcony or Terrace | Security Staff | CCTV Security | 24 Hours Concierge', 'details': '155 Sq. M.', 'agent_name': 'mariam', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45654171-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654172-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654184-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654185-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654186-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654187-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654188-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654189-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654190-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654191-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654192-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Resale'}
+2026-07-11 23:20:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770183.html>
+{'agent_name': 'mariam',
+ 'amenities': 'Built in Kitchen Appliances | Covered parking | Parking Spaces '
+              '| : 1 | Electricity Meter | Water Meter | Natural Gas | Balcony '
+              'or Terrace | Security Staff | CCTV Security | 24 Hours '
+              'Concierge',
+ 'bathrooms': '3',
+ 'bedrooms': '3',
+ 'broker_display_name': 'Start Homes 2',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Apartment for sale in Al Rehab, New Cairo at a special price '
+                'for a quick sale (Phase 2) Prime location, steps from the old '
+                'market and food court. Apartment area: 155 square meters. '
+                'Consists of: 3-piece reception + 3 bedrooms (including a '
+                'living room) + 3 bathrooms + kitchen. Fully finished to a '
+                'high standard. Serious owner. Agent directly from the owner. '
+                'Immediate occupancy. Attractive price for quick sale: '
+                '7,800,000 EGP. =================== Agent directly from the '
+                'owner. Contact: Mariam Risk Start Homes Real Estate Marketing '
+                'and Investment Company in Al Rehab and Madinaty Gateway Mall '
+                '- Office No. AF6 - First Floor - Al Rehab City - New Cairo',
+ 'details': '155 Sq. M.',
+ 'furnished': 'Furnished',
+ 'id': '503770183',
+ 'location': 'Rehab City, New Cairo, Cairo',
+ 'ownership': 'Resale',
+ 'price': '7,800,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45654171-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654172-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654184-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654185-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654186-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654187-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654188-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654189-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654190-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654191-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654192-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - 1476-A0Rj2U',
+ 'title': 'A distinctive apartment for sale in Al Rehab City - 155 meters - '
+          'Phase Two - characterized by its proximity to all services',
+ 'url': 'https://www.bayut.eg/en/property/details-503770183.html'}
+2026-07-11 23:20:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770200.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:28 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:28 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770200.html', 'reference_number': 'Bayut - 1016-bI8OG8', 'id': '503770200', 'broker_display_name': 'Falcon Real Estate', 'title': 'U apartment ready to move in now douple view pool+land scape perfect layout very easy payment plan + installment over large numper of years', 'property_type': 'Apartment', 'description': 'The apartment is north facing with double frontage in compund mayan Pool and landscape view ready on key Minutes from the American University Next to the largest established service areas The apartment has a premium double view perfect for investment and residential living Apartment area 99 sqm 2 bedrooms 3 bathrooms 3 piece reception open terrace overlooking pool and landscape Stunning double view cash price = 5.000. 000 For contact and viewing call now 015570766152', 'location': 'Mayan, 5th Settlement, New Cairo, Cairo', 'price': '5,000,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '3', 'furnished': 'Unfurnished', 'amenities': '', 'details': '99 Sq. M.', 'agent_name': 'Abdallah Ashraf', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45654404-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654405-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654406-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654407-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654408-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654409-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654410-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654411-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654412-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654413-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654414-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654415-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45654416-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770200.html>
+{'agent_name': 'Abdallah Ashraf',
+ 'amenities': '',
+ 'bathrooms': '3',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Falcon Real Estate',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'The apartment is north facing with double frontage in compund '
+                'mayan Pool and landscape view ready on key Minutes from the '
+                'American University Next to the largest established service '
+                'areas The apartment has a premium double view perfect for '
+                'investment and residential living Apartment area 99 sqm 2 '
+                'bedrooms 3 bathrooms 3 piece reception open terrace '
+                'overlooking pool and landscape Stunning double view cash '
+                'price = 5.000. 000 For contact and viewing call now '
+                '015570766152',
+ 'details': '99 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770200',
+ 'location': 'Mayan, 5th Settlement, New Cairo, Cairo',
+ 'ownership': 'Primary',
+ 'price': '5,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45654404-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654405-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654406-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654407-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654408-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654409-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654410-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654411-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654412-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654413-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654414-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654415-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45654416-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - 1016-bI8OG8',
+ 'title': 'U apartment ready to move in now douple view pool+land scape '
+          'perfect layout very easy payment plan + installment over large '
+          'numper of years',
+ 'url': 'https://www.bayut.eg/en/property/details-503770200.html'}
+2026-07-11 23:20:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770253.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:30 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:30 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770253.html', 'reference_number': 'Bayut - 5000410-VShONvyasmina', 'id': '503770253', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'Chalet for sale, only 300 meters from the sea, first row lagoon, only 5% down payment, 10-year installments in Goun, North Coast!', 'property_type': 'Chalet', 'description': 'First row lagoon chalet, ready to move in, with a 5% down payment and installments over 10 years. Chalet for sale in Goun, Ras El Hekma Unit type: Chalet Built-up area: 102 sq m Number of rooms: 2 Number of bathrooms: 2 Finishing: Fully finished with air conditioning Chalet for sale in Goun, Ras El Hekma Direct view of the lagoon, very close to the sea within Ras El Hekma village Immediate occupancy with installments until 2035 Prime location Directly on the seafront Installments over 10 years', 'location': 'June Sodic, Ras Al Hekma, North Coast, Matruh', 'price': '15,000,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '3', 'furnished': 'Unfurnished', 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | Electricity Backup | Pets Allowed | Electricity Meter | Centrally Air-Conditioned | Sea view | Central Heating | Storage Areas | Natural Gas | Landline | Central A/C & heating | Balcony or Terrace | Lobby in Building | Service Elevators | Prayer Room | First Aid Medical Center | Gym or Health Club | Facilities for Disabled | Swimming Pool | Day Care Center | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Business Center | Conference Room | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Laundry Facility | Broadband Internet | Satellite/Cable TV | Intercom | 24 Hours Concierge | Maids Room', 'details': '102 Sq. M.', 'agent_name': 'Reem Selim', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655127-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655128-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655129-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655130-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655131-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655132-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655133-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655134-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655135-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655136-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655137-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655138-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655139-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655140-800x600.jpeg'], 'completion_status': 'Off-Plan', 'ownership': 'Primary'}
+2026-07-11 23:20:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770253.html>
+{'agent_name': 'Reem Selim',
+ 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | '
+              'Electricity Backup | Pets Allowed | Electricity Meter | '
+              'Centrally Air-Conditioned | Sea view | Central Heating | '
+              'Storage Areas | Natural Gas | Landline | Central A/C & heating '
+              '| Balcony or Terrace | Lobby in Building | Service Elevators | '
+              'Prayer Room | First Aid Medical Center | Gym or Health Club | '
+              'Facilities for Disabled | Swimming Pool | Day Care Center | '
+              'Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste '
+              'Disposal | Maintenance Staff | Cleaning Services | Business '
+              'Center | Conference Room | Security Staff | CCTV Security | '
+              'Shared Kitchen | Laundry Room | Laundry Facility | Broadband '
+              'Internet | Satellite/Cable TV | Intercom | 24 Hours Concierge | '
+              'Maids Room',
+ 'bathrooms': '3',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Off-Plan',
+ 'currency': 'EGP',
+ 'description': 'First row lagoon chalet, ready to move in, with a 5% down '
+                'payment and installments over 10 years. Chalet for sale in '
+                'Goun, Ras El Hekma Unit type: Chalet Built-up area: 102 sq m '
+                'Number of rooms: 2 Number of bathrooms: 2 Finishing: Fully '
+                'finished with air conditioning Chalet for sale in Goun, Ras '
+                'El Hekma Direct view of the lagoon, very close to the sea '
+                'within Ras El Hekma village Immediate occupancy with '
+                'installments until 2035 Prime location Directly on the '
+                'seafront Installments over 10 years',
+ 'details': '102 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770253',
+ 'location': 'June Sodic, Ras Al Hekma, North Coast, Matruh',
+ 'ownership': 'Primary',
+ 'price': '15,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655127-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655128-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655129-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655130-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655131-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655132-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655133-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655134-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655135-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655136-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655137-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655138-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655139-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655140-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - 5000410-VShONvyasmina',
+ 'title': 'Chalet for sale, only 300 meters from the sea, first row lagoon, '
+          'only 5% down payment, 10-year installments in Goun, North Coast!',
+ 'url': 'https://www.bayut.eg/en/property/details-503770253.html'}
+2026-07-11 23:20:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770259.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:31 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:31 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770259.html', 'reference_number': 'Bayut - 5000410-qV8klB', 'id': '503770259', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'early delivery finished chalet with garden in makadi heights red sea with installments lagoon view', 'property_type': 'Chalet', 'description': "Fully finished lagoon chalet with garden in Red Sea delivery 1 year - 2 bedrooms garden: 71 sqm - 2 bathrooms lagoon view For more info: --------------------------------------------------------------------- Amenities & Services: - Medical center with clinic and pharmacy - Beach club and water sports - 24/7 security and maintenance Investment Potential: - Prime Red Sea coastal location - Comprehensive resort infrastructure - Orascom's established development track record - Luxury hotels (Labranda Royal, Lemon & Soul) - 33,000 sqm clubhouse with sports facilities - Shopping mall and dining options", 'location': 'Makadi Heights, Hurghada, Red Sea', 'price': '8,000,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '2', 'furnished': 'Unfurnished', 'amenities': 'Built in Kitchen Appliances | Covered parking | Electricity Meter | Balcony or Terrace | First Aid Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Maintenance Staff | Business Center | Shared Kitchen | Laundry Room | Laundry Facility | 24 Hours Concierge | Maids Room', 'details': '100 Sq. M.', 'agent_name': 'Jakleen Elsaied', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655182-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655183-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655184-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655185-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655186-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655187-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655188-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655189-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655190-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655191-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655192-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655193-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770259.html>
+{'agent_name': 'Jakleen Elsaied',
+ 'amenities': 'Built in Kitchen Appliances | Covered parking | Electricity '
+              'Meter | Balcony or Terrace | First Aid Medical Center | Gym or '
+              'Health Club | Swimming Pool | Jacuzzi | Sauna | Steam Room | '
+              'Day Care Center | Kids Play Area | Lawn or Garden | Barbeque '
+              'Area | Cafeteria or Canteen | Maintenance Staff | Business '
+              'Center | Shared Kitchen | Laundry Room | Laundry Facility | 24 '
+              'Hours Concierge | Maids Room',
+ 'bathrooms': '2',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Fully finished lagoon chalet with garden in Red Sea delivery '
+                '1 year - 2 bedrooms garden: 71 sqm - 2 bathrooms lagoon view '
+                'For more info: '
+                '--------------------------------------------------------------------- '
+                'Amenities & Services: - Medical center with clinic and '
+                'pharmacy - Beach club and water sports - 24/7 security and '
+                'maintenance Investment Potential: - Prime Red Sea coastal '
+                "location - Comprehensive resort infrastructure - Orascom's "
+                'established development track record - Luxury hotels '
+                '(Labranda Royal, Lemon & Soul) - 33,000 sqm clubhouse with '
+                'sports facilities - Shopping mall and dining options',
+ 'details': '100 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770259',
+ 'location': 'Makadi Heights, Hurghada, Red Sea',
+ 'ownership': 'Primary',
+ 'price': '8,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655182-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655183-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655184-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655185-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655186-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655187-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655188-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655189-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655190-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655191-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655192-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655193-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - 5000410-qV8klB',
+ 'title': 'early delivery finished chalet with garden in makadi heights red '
+          'sea with installments lagoon view',
+ 'url': 'https://www.bayut.eg/en/property/details-503770259.html'}
+2026-07-11 23:20:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770274.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:32 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:32 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770274.html', 'reference_number': 'Bayut - RECEAS', 'id': '503770274', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'FOR SALE READY TO MOVE VILLA SEA VIEW FULLY FINISHED OVER 7 YEARS INSTALMENTS LIMITED UNITS!', 'property_type': 'Villa', 'description': "FOR SALE IN NORTH COAST READY TO MOVE VILLA FULLY FINISHED OVER 7 YEARS INSTALMENTS!! CONTAINS: 4 BEDROOMS. 4 BATHROOMS. GARDEN. ROOF. PENTHOUSE. NANNYS ROOM. NANNYS BATHROOM. ------------------------------------------------ ABOUT NORTH COAST: Egypt's North Coast (El Sahel) stretches over 1,050 km along the Mediterranean Sea, running from west of Alexandria to Marsa Matrouh. Famous for its powdery white sands and turquoise waters, it’s the ultimate summer retreat for escaping the city heat, and is easily accessible via the International Coastal and El Dabaa roads.", 'location': 'Marassi, Sidi Abdel Rahman, North Coast, Matruh', 'price': '60,000,000', 'currency': 'EGP', 'bedrooms': '4', 'bathrooms': '4', 'furnished': 'Furnished', 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | Electricity Backup | Pets Allowed | Electricity Meter | Centrally Air-Conditioned | Sea view | Central Heating | Water Meter | Double Glazed Windows | Storage Areas | Natural Gas | Landline | Study Room | Central A/C & heating | Balcony or Terrace | Lobby in Building | Service Elevators | Prayer Room | Reception/Waiting Room | First Aid Medical Center | Gym or Health Club | Facilities for Disabled | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Business Center | Conference Room | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Laundry Facility | Broadband Internet | Satellite/Cable TV | Intercom | ATM Facility | 24 Hours Concierge | Maids Room | Freehold', 'details': '480 Sq. M.', 'agent_name': 'Lamis Nagy', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655378-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655379-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655380-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655382-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655383-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655384-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655385-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655386-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655387-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45655388-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:32 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770274.html>
+{'agent_name': 'Lamis Nagy',
+ 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | '
+              'Electricity Backup | Pets Allowed | Electricity Meter | '
+              'Centrally Air-Conditioned | Sea view | Central Heating | Water '
+              'Meter | Double Glazed Windows | Storage Areas | Natural Gas | '
+              'Landline | Study Room | Central A/C & heating | Balcony or '
+              'Terrace | Lobby in Building | Service Elevators | Prayer Room | '
+              'Reception/Waiting Room | First Aid Medical Center | Gym or '
+              'Health Club | Facilities for Disabled | Swimming Pool | Jacuzzi '
+              '| Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn '
+              'or Garden | Barbeque Area | Cafeteria or Canteen | Waste '
+              'Disposal | Maintenance Staff | Cleaning Services | Business '
+              'Center | Conference Room | Security Staff | CCTV Security | '
+              'Shared Kitchen | Laundry Room | Laundry Facility | Broadband '
+              'Internet | Satellite/Cable TV | Intercom | ATM Facility | 24 '
+              'Hours Concierge | Maids Room | Freehold',
+ 'bathrooms': '4',
+ 'bedrooms': '4',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'FOR SALE IN NORTH COAST READY TO MOVE VILLA FULLY FINISHED '
+                'OVER 7 YEARS INSTALMENTS!! CONTAINS: 4 BEDROOMS. 4 BATHROOMS. '
+                'GARDEN. ROOF. PENTHOUSE. NANNYS ROOM. NANNYS BATHROOM. '
+                '------------------------------------------------ ABOUT NORTH '
+                "COAST: Egypt's North Coast (El Sahel) stretches over 1,050 km "
+                'along the Mediterranean Sea, running from west of Alexandria '
+                'to Marsa Matrouh. Famous for its powdery white sands and '
+                'turquoise waters, it’s the ultimate summer retreat for '
+                'escaping the city heat, and is easily accessible via the '
+                'International Coastal and El Dabaa roads.',
+ 'details': '480 Sq. M.',
+ 'furnished': 'Furnished',
+ 'id': '503770274',
+ 'location': 'Marassi, Sidi Abdel Rahman, North Coast, Matruh',
+ 'ownership': 'Primary',
+ 'price': '60,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45655378-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655379-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655380-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655382-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655383-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655384-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655385-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655386-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655387-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45655388-800x600.jpeg'],
+ 'property_type': 'Villa',
+ 'reference_number': 'Bayut - RECEAS',
+ 'title': 'FOR SALE READY TO MOVE VILLA SEA VIEW FULLY FINISHED OVER 7 YEARS '
+          'INSTALMENTS LIMITED UNITS!',
+ 'url': 'https://www.bayut.eg/en/property/details-503770274.html'}
+2026-07-11 23:20:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770335.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:34 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:34 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770335.html', 'reference_number': 'Bayut - 1016-2JJURD', 'id': '503770335', 'broker_display_name': 'Falcon Real Estate', 'title': 'Luxury high end villa for sale with VIP lagoon view in Talala compound opposite Madinaty and Sodic East', 'property_type': 'Villa', 'description': 'Villa for sale in Talala Compound, New Heliopolis, next to Sodic East Area 166m (three bedrooms + living room + 3 bathrooms + 2 reception rooms with garden view) Fully finished to an ultra-modern standard Prime location Stunning landscape view Total price 6,059,229 For details: (call & WhatsApp) ---------------------------------------', 'location': 'Talala, New Heliopolis, Cairo', 'price': '6,059,229', 'currency': 'EGP', 'bedrooms': '3', 'bathrooms': '3', 'furnished': 'Unfurnished', 'amenities': 'Built in Kitchen Appliances | Centrally Air-Conditioned | Double Glazed Windows | Storage Areas | Landline | Balcony or Terrace | First Aid Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Security Staff | CCTV Security | Intercom | 24 Hours Concierge', 'details': '166 Sq. M.', 'agent_name': 'Ahmed Amin', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656219-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656220-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656221-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656222-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656223-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656224-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656225-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656226-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656227-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656228-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656229-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770335.html>
+{'agent_name': 'Ahmed Amin',
+ 'amenities': 'Built in Kitchen Appliances | Centrally Air-Conditioned | '
+              'Double Glazed Windows | Storage Areas | Landline | Balcony or '
+              'Terrace | First Aid Medical Center | Gym or Health Club | '
+              'Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center '
+              '| Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria '
+              'or Canteen | Waste Disposal | Maintenance Staff | Cleaning '
+              'Services | Security Staff | CCTV Security | Intercom | 24 Hours '
+              'Concierge',
+ 'bathrooms': '3',
+ 'bedrooms': '3',
+ 'broker_display_name': 'Falcon Real Estate',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Villa for sale in Talala Compound, New Heliopolis, next to '
+                'Sodic East Area 166m (three bedrooms + living room + 3 '
+                'bathrooms + 2 reception rooms with garden view) Fully '
+                'finished to an ultra-modern standard Prime location Stunning '
+                'landscape view Total price 6,059,229 For details: (call & '
+                'WhatsApp) ---------------------------------------',
+ 'details': '166 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770335',
+ 'location': 'Talala, New Heliopolis, Cairo',
+ 'ownership': 'Primary',
+ 'price': '6,059,229',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656219-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656220-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656221-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656222-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656223-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656224-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656225-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656226-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656227-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656228-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656229-800x600.jpeg'],
+ 'property_type': 'Villa',
+ 'reference_number': 'Bayut - 1016-2JJURD',
+ 'title': 'Luxury high end villa for sale with VIP lagoon view in Talala '
+          'compound opposite Madinaty and Sodic East',
+ 'url': 'https://www.bayut.eg/en/property/details-503770335.html'}
+2026-07-11 23:20:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770339.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:35 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:35 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770339.html', 'reference_number': 'Bayut - 1016-2O8Ee3', 'id': '503770339', 'broker_display_name': 'Falcon Real Estate', 'title': 'Duplex for sale on two facades with VIP view high end finished and ready to move in Sodic Villette Fifth Settlement', 'property_type': 'Apartment', 'description': 'Ground floor duplex with garden for sale in a prime location in Sodic Villette Compound, Fifth Settlement Area 290 m + large garden Double view overlooking landscape & lagoon Two facades and a VIP location Fully finished to ultra-modern standards Contact: (Call & WhatsApp) ----------------------------', 'location': 'Villette Compound, 5th Settlement, New Cairo, Cairo', 'price': '17,207,922', 'currency': 'EGP', 'bedrooms': '4', 'bathrooms': '4', 'furnished': 'Unfurnished', 'amenities': 'Built in Kitchen Appliances | Electricity Backup | Centrally Air-Conditioned | Double Glazed Windows | Landline | First Aid Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Business Center | Conference Room | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Broadband Internet | Satellite/Cable TV | Intercom | 24 Hours Concierge', 'details': '290 Sq. M.', 'agent_name': 'Ahmed Amin', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656149-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656150-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656151-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656152-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656153-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656154-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656155-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656156-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656157-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656158-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656159-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770339.html>
+{'agent_name': 'Ahmed Amin',
+ 'amenities': 'Built in Kitchen Appliances | Electricity Backup | Centrally '
+              'Air-Conditioned | Double Glazed Windows | Landline | First Aid '
+              'Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | '
+              'Sauna | Steam Room | Day Care Center | Kids Play Area | '
+              'Barbeque Area | Cafeteria or Canteen | Waste Disposal | '
+              'Maintenance Staff | Cleaning Services | Business Center | '
+              'Conference Room | Security Staff | CCTV Security | Shared '
+              'Kitchen | Laundry Room | Broadband Internet | Satellite/Cable '
+              'TV | Intercom | 24 Hours Concierge',
+ 'bathrooms': '4',
+ 'bedrooms': '4',
+ 'broker_display_name': 'Falcon Real Estate',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Ground floor duplex with garden for sale in a prime location '
+                'in Sodic Villette Compound, Fifth Settlement Area 290 m + '
+                'large garden Double view overlooking landscape & lagoon Two '
+                'facades and a VIP location Fully finished to ultra-modern '
+                'standards Contact: (Call & WhatsApp) '
+                '----------------------------',
+ 'details': '290 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770339',
+ 'location': 'Villette Compound, 5th Settlement, New Cairo, Cairo',
+ 'ownership': 'Primary',
+ 'price': '17,207,922',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656149-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656150-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656151-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656152-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656153-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656154-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656155-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656156-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656157-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656158-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656159-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - 1016-2O8Ee3',
+ 'title': 'Duplex for sale on two facades with VIP view high end finished and '
+          'ready to move in Sodic Villette Fifth Settlement',
+ 'url': 'https://www.bayut.eg/en/property/details-503770339.html'}
+2026-07-11 23:20:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770374.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:36 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:36 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770374.html', 'reference_number': 'Bayut - 9876-ErM1nc', 'id': '503770374', 'broker_display_name': 'Property Hills Plus', 'title': 'Prime located villa on golf in Golf Views Palm Hills next to New Giza', 'property_type': 'Villa', 'description': 'Prime located villa on golf in Golf Views Palm Hills next to New Giza and minutes from Al-Jazira Club and Arkan Plaza Sheikh Zayed Unit Area: 380 sqm Land Area: 1,000 sqm 5 Bedrooms 5 Bathrooms Nanny’s Room + Bathroom 3-Piece Reception Area The rest in bulks Features and Services: Golf Green Spaces Clubhouse Gym and Spa Maintenance and Cleaning Services 24/7 Security and Guarding History of Palm Hills: Golf Views Golf Extension Palm Hills October Solitaire Hacienda Henish Hacienda White Hacienda Waters Hacienda Blue Badya The Crown', 'location': 'Palm hills golf views Compound, 6th of October, Giza', 'price': '14,000,000', 'currency': 'EGP', 'bedrooms': '5', 'bathrooms': '5', 'furnished': 'Unfurnished', 'amenities': 'Covered parking | Gym or Health Club | Swimming Pool | Kids Play Area | Lawn or Garden | Barbeque Area | Maintenance Staff | Cleaning Services | Business Center | Security Staff | Maids Room', 'details': '380 Sq. M.', 'agent_name': 'Fathy Mohamed', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656445-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656446-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656447-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656448-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656449-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656450-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656451-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656452-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656453-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656454-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45656455-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770374.html>
+{'agent_name': 'Fathy Mohamed',
+ 'amenities': 'Covered parking | Gym or Health Club | Swimming Pool | Kids '
+              'Play Area | Lawn or Garden | Barbeque Area | Maintenance Staff '
+              '| Cleaning Services | Business Center | Security Staff | Maids '
+              'Room',
+ 'bathrooms': '5',
+ 'bedrooms': '5',
+ 'broker_display_name': 'Property Hills Plus',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Prime located villa on golf in Golf Views Palm Hills next to '
+                'New Giza and minutes from Al-Jazira Club and Arkan Plaza '
+                'Sheikh Zayed Unit Area: 380 sqm Land Area: 1,000 sqm 5 '
+                'Bedrooms 5 Bathrooms Nanny’s Room + Bathroom 3-Piece '
+                'Reception Area The rest in bulks Features and Services: Golf '
+                'Green Spaces Clubhouse Gym and Spa Maintenance and Cleaning '
+                'Services 24/7 Security and Guarding History of Palm Hills: '
+                'Golf Views Golf Extension Palm Hills October Solitaire '
+                'Hacienda Henish Hacienda White Hacienda Waters Hacienda Blue '
+                'Badya The Crown',
+ 'details': '380 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770374',
+ 'location': 'Palm hills golf views Compound, 6th of October, Giza',
+ 'ownership': 'Primary',
+ 'price': '14,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45656445-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656446-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656447-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656448-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656449-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656450-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656451-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656452-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656453-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656454-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45656455-800x600.jpeg'],
+ 'property_type': 'Villa',
+ 'reference_number': 'Bayut - 9876-ErM1nc',
+ 'title': 'Prime located villa on golf in Golf Views Palm Hills next to New '
+          'Giza',
+ 'url': 'https://www.bayut.eg/en/property/details-503770374.html'}
+2026-07-11 23:20:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770447.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:38 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:38 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770447.html', 'reference_number': 'Bayut - 1016-qfajTT', 'id': '503770447', 'broker_display_name': 'Falcon Real Estate', 'title': 'A fully finished, ready-to-move-in chalet with a sea view is available for sale in Ain Sokhna, near the Suez Road and La Vista,', 'property_type': 'Chalet', 'description': "A fully finished, ready-to-move-in chalet with a sea view is available for sale in Ain Sokhna, near the Suez Road and La Vista, and minutes from Porto Sokhna. This luxurious chalet boasts a prime location in one of Ain Sokhna's most prestigious villages,, next to La Vista. It features high-end finishes. The village offers comprehensive services and is ready for viewing. A prime location near La Vista, minutes from Porto Sokhna Resort, and close to the Suez Road. A 25% down payment and installments over 6 years are required. For viewings, please call or leave a message with your number, and we will provide you with all the details.", 'location': 'Al Galala City, Ain Sukhna, Suez', 'price': '2,500,000', 'currency': 'EGP', 'bedrooms': '3', 'bathrooms': '2', 'furnished': None, 'amenities': 'Built in Kitchen Appliances | Balcony or Terrace | Lobby in Building | Completion Year | : 2 | Prayer Room | First Aid Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Laundry Facility', 'details': '110 Sq. M.', 'agent_name': 'Mariam Hossam', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657308-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657309-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657310-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657311-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657312-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657313-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657314-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657315-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657316-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657317-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770447.html>
+{'agent_name': 'Mariam Hossam',
+ 'amenities': 'Built in Kitchen Appliances | Balcony or Terrace | Lobby in '
+              'Building | Completion Year | : 2 | Prayer Room | First Aid '
+              'Medical Center | Gym or Health Club | Swimming Pool | Jacuzzi | '
+              'Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or '
+              'Garden | Barbeque Area | Cafeteria or Canteen | Security Staff '
+              '| CCTV Security | Shared Kitchen | Laundry Room | Laundry '
+              'Facility',
+ 'bathrooms': '2',
+ 'bedrooms': '3',
+ 'broker_display_name': 'Falcon Real Estate',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'A fully finished, ready-to-move-in chalet with a sea view is '
+                'available for sale in Ain Sokhna, near the Suez Road and La '
+                'Vista, and minutes from Porto Sokhna. This luxurious chalet '
+                "boasts a prime location in one of Ain Sokhna's most "
+                'prestigious villages,, next to La Vista. It features high-end '
+                'finishes. The village offers comprehensive services and is '
+                'ready for viewing. A prime location near La Vista, minutes '
+                'from Porto Sokhna Resort, and close to the Suez Road. A 25% '
+                'down payment and installments over 6 years are required. For '
+                'viewings, please call or leave a message with your number, '
+                'and we will provide you with all the details.',
+ 'details': '110 Sq. M.',
+ 'furnished': None,
+ 'id': '503770447',
+ 'location': 'Al Galala City, Ain Sukhna, Suez',
+ 'ownership': 'Primary',
+ 'price': '2,500,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657308-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657309-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657310-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657311-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657312-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657313-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657314-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657315-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657316-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657317-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - 1016-qfajTT',
+ 'title': 'A fully finished, ready-to-move-in chalet with a sea view is '
+          'available for sale in Ain Sokhna, near the Suez Road and La Vista,',
+ 'url': 'https://www.bayut.eg/en/property/details-503770447.html'}
+2026-07-11 23:20:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770451.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:39 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:39 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770451.html', 'reference_number': 'Bayut - 5000410-ZNAKit-tagg', 'id': '503770451', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'CHALET FOR SALE LAGOON VIEW %5 DOWN PAYMENT IN THE MED RAS EL HEKMA NORTH COAST', 'property_type': 'Chalet', 'description': "CHALET FOR SALE _LAGOON VIEW _%5 DOWN PAYMENT _IN THE MED _NORTH COAST Chalet for Sale at The Med – North Coast | Fully Finished For More Details Contact: Own your dream chalet in one of the most prestigious destinations on Egypt's North Coast, offering modern designs, breathtaking sea views, and a premium coastal lifestyle. UNIT Details: • 2 Bedrooms • 2 Bathrooms • Fully Finished • Prime Location • Perfect for Vacation, Investment & Summer Living The Med – North Coast Experience a new level of luxury at The Med, a world-class beachfront destination designed for comfort, privacy, and unforgettable summer experiences. Enjoy direct access to crystal-clear waters and a fully integrated community with premium amenities. Crystal Lagoon & Sandy Beach Swimming Pools Landscaped Green Areas Walking & Cycling Tracks Cafés & Restaurants Commercial & Retail Area Sports & Entertainment Facilities Gated Community with 24/7 Security Ideal for Summer Holidays, Investment & Family Getaways For more details and viewing:", 'location': 'The Med, Ras Al Hekma, North Coast, Matruh', 'price': '13,000,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '2', 'furnished': 'Unfurnished', 'amenities': '', 'details': '100 Sq. M.', 'agent_name': 'Reem Selim', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657340-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657341-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657342-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657359-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657360-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657361-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657362-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657363-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657364-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657365-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657366-800x600.jpeg'], 'completion_status': 'Off-Plan', 'ownership': 'Primary'}
+2026-07-11 23:20:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770451.html>
+{'agent_name': 'Reem Selim',
+ 'amenities': '',
+ 'bathrooms': '2',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Off-Plan',
+ 'currency': 'EGP',
+ 'description': 'CHALET FOR SALE _LAGOON VIEW _%5 DOWN PAYMENT _IN THE MED '
+                '_NORTH COAST Chalet for Sale at The Med – North Coast | Fully '
+                'Finished For More Details Contact: Own your dream chalet in '
+                "one of the most prestigious destinations on Egypt's North "
+                'Coast, offering modern designs, breathtaking sea views, and a '
+                'premium coastal lifestyle. UNIT Details: • 2 Bedrooms • 2 '
+                'Bathrooms • Fully Finished • Prime Location • Perfect for '
+                'Vacation, Investment & Summer Living The Med – North Coast '
+                'Experience a new level of luxury at The Med, a world-class '
+                'beachfront destination designed for comfort, privacy, and '
+                'unforgettable summer experiences. Enjoy direct access to '
+                'crystal-clear waters and a fully integrated community with '
+                'premium amenities. Crystal Lagoon & Sandy Beach Swimming '
+                'Pools Landscaped Green Areas Walking & Cycling Tracks Cafés & '
+                'Restaurants Commercial & Retail Area Sports & Entertainment '
+                'Facilities Gated Community with 24/7 Security Ideal for '
+                'Summer Holidays, Investment & Family Getaways For more '
+                'details and viewing:',
+ 'details': '100 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770451',
+ 'location': 'The Med, Ras Al Hekma, North Coast, Matruh',
+ 'ownership': 'Primary',
+ 'price': '13,000,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657340-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657341-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657342-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657359-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657360-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657361-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657362-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657363-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657364-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657365-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657366-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - 5000410-ZNAKit-tagg',
+ 'title': 'CHALET FOR SALE LAGOON VIEW %5 DOWN PAYMENT IN THE MED RAS EL HEKMA '
+          'NORTH COAST',
+ 'url': 'https://www.bayut.eg/en/property/details-503770451.html'}
+2026-07-11 23:20:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770471.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:40 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:40 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770471.html', 'reference_number': 'Bayut - 1016-CQrAXm', 'id': '503770471', 'broker_display_name': 'Falcon Real Estate', 'title': 'U apartment ready to move in now douple view pool+land scape perfect layout very easy payment plan + installment 10y - el patio casa + swan lake', 'property_type': 'Apartment', 'description': 'The apartment is north facing with double frontage in compund mayan Pool and landscape view ready on key Minutes from the el patio casa Next to the largest established service areas The apartment has a premium double view perfect for investment and residential living Apartment area 101 sqm 2 bedrooms 3 bathrooms 3 piece reception open terrace overlooking pool and landscape Stunning double view cash price = 3.900. 000 For contact and viewing call now 015570766152', 'location': 'Mayan, Shorouk City, Cairo', 'price': '3,900,000', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '3', 'furnished': 'Unfurnished', 'amenities': '', 'details': '101 Sq. M.', 'agent_name': 'Abdallah Ashraf', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657581-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657582-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657583-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657584-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657585-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657586-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657587-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657588-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657589-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657590-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657591-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657592-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Primary'}
+2026-07-11 23:20:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770471.html>
+{'agent_name': 'Abdallah Ashraf',
+ 'amenities': '',
+ 'bathrooms': '3',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Falcon Real Estate',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'The apartment is north facing with double frontage in compund '
+                'mayan Pool and landscape view ready on key Minutes from the '
+                'el patio casa Next to the largest established service areas '
+                'The apartment has a premium double view perfect for '
+                'investment and residential living Apartment area 101 sqm 2 '
+                'bedrooms 3 bathrooms 3 piece reception open terrace '
+                'overlooking pool and landscape Stunning double view cash '
+                'price = 3.900. 000 For contact and viewing call now '
+                '015570766152',
+ 'details': '101 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770471',
+ 'location': 'Mayan, Shorouk City, Cairo',
+ 'ownership': 'Primary',
+ 'price': '3,900,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657581-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657582-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657583-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657584-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657585-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657586-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657587-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657588-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657589-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657590-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657591-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657592-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - 1016-CQrAXm',
+ 'title': 'U apartment ready to move in now douple view pool+land scape '
+          'perfect layout very easy payment plan + installment 10y - el patio '
+          'casa + swan lake',
+ 'url': 'https://www.bayut.eg/en/property/details-503770471.html'}
+2026-07-11 23:20:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770482.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:42 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:42 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770482.html', 'reference_number': 'Bayut - ZS-A1135', 'id': '503770482', 'broker_display_name': 'New Properties', 'title': 'A 150 sqm ultra-modern apartment for sale at a reasonable price, with a kitchen and air conditioning in the Zayed Dunes compound, Sheikh Zayed.', 'property_type': 'Apartment', 'description': 'In the heart of Sheikh Zayed Old and next to the American School and Saudi Hypermarket and Arkan Mall A prime location for easy access to and from it --------------------------------------------------------------------------- Zayed Dunes Compound 150 sqm apartment First floor 3 bedrooms, including a master bedroom 2 additional bathrooms Reception Kitchen Wooden kitchen units as shown in the pictures Air-conditioned --------------------------------------------------------------------------', 'location': 'Zayed Dunes Compound, Sheikh Zayed, Giza', 'price': '7,800,000', 'currency': 'EGP', 'bedrooms': '3', 'bathrooms': '2', 'furnished': 'Unfurnished', 'amenities': '', 'details': '150 Sq. M.', 'agent_name': 'mohamed kamal', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657661-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657662-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657663-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657664-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657665-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657666-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657667-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657668-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657669-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657670-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Resale'}
+2026-07-11 23:20:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770482.html>
+{'agent_name': 'mohamed kamal',
+ 'amenities': '',
+ 'bathrooms': '2',
+ 'bedrooms': '3',
+ 'broker_display_name': 'New Properties',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'In the heart of Sheikh Zayed Old and next to the American '
+                'School and Saudi Hypermarket and Arkan Mall A prime location '
+                'for easy access to and from it '
+                '--------------------------------------------------------------------------- '
+                'Zayed Dunes Compound 150 sqm apartment First floor 3 '
+                'bedrooms, including a master bedroom 2 additional bathrooms '
+                'Reception Kitchen Wooden kitchen units as shown in the '
+                'pictures Air-conditioned '
+                '--------------------------------------------------------------------------',
+ 'details': '150 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770482',
+ 'location': 'Zayed Dunes Compound, Sheikh Zayed, Giza',
+ 'ownership': 'Resale',
+ 'price': '7,800,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657661-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657662-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657663-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657664-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657665-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657666-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657667-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657668-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657669-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657670-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - ZS-A1135',
+ 'title': 'A 150 sqm ultra-modern apartment for sale at a reasonable price, '
+          'with a kitchen and air conditioning in the Zayed Dunes compound, '
+          'Sheikh Zayed.',
+ 'url': 'https://www.bayut.eg/en/property/details-503770482.html'}
+2026-07-11 23:20:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770501.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:43 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:43 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770501.html', 'reference_number': 'Bayut - 5000329-dNinEp', 'id': '503770501', 'broker_display_name': 'Modern Cairo', 'title': 'The strongest investment opportunity in the heart of the administrative capital. Own your unit in the R8 area with the best payment plans extending up to 14 years and a down payment starting from 10%, and a fully integrated compound with all services.', 'property_type': 'Apartment', 'description': 'To contact sales from outside Egypt: WhatsApp QURTUBA Developments The R8 directly on the main axis Our second project in the capital and the most distinctive With a modern design, integrated services, and a strategic location that combines luxury and tranquility. A very distinctive location – Plot D2 directly on the main axis Building ratio of only 19% The largest lagoon inside a residential compound in the R8 3 minutes from the only university in R8 One minute from the service area (school - hospital - mosque) 5 minutes from the Diplomatic District 10 minutes from the government district The project land area is 21.5 acres Consulting Engineer: Arcrete Enjoy a world-class lifestyle with: Lagoon Views Lakes Clubhouse Mosque Commercial Area', 'location': 'Hava, New Capital City, Cairo', 'price': '1,965,000', 'currency': 'EGP', 'bedrooms': 'Studio', 'bathrooms': '1', 'furnished': 'Unfurnished', 'amenities': '', 'details': '52 Sq. M.', 'agent_name': 'Esraa Abdelrhman', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657867-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657868-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657869-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657870-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657871-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657902-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657903-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657904-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657905-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657906-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657907-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657908-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657909-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657910-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45657911-800x600.jpeg'], 'completion_status': 'Off-Plan', 'ownership': 'Primary'}
+2026-07-11 23:20:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770501.html>
+{'agent_name': 'Esraa Abdelrhman',
+ 'amenities': '',
+ 'bathrooms': '1',
+ 'bedrooms': 'Studio',
+ 'broker_display_name': 'Modern Cairo',
+ 'completion_status': 'Off-Plan',
+ 'currency': 'EGP',
+ 'description': 'To contact sales from outside Egypt: WhatsApp QURTUBA '
+                'Developments The R8 directly on the main axis Our second '
+                'project in the capital and the most distinctive With a modern '
+                'design, integrated services, and a strategic location that '
+                'combines luxury and tranquility. A very distinctive location '
+                '– Plot D2 directly on the main axis Building ratio of only '
+                '19% The largest lagoon inside a residential compound in the '
+                'R8 3 minutes from the only university in R8 One minute from '
+                'the service area (school - hospital - mosque) 5 minutes from '
+                'the Diplomatic District 10 minutes from the government '
+                'district The project land area is 21.5 acres Consulting '
+                'Engineer: Arcrete Enjoy a world-class lifestyle with: Lagoon '
+                'Views Lakes Clubhouse Mosque Commercial Area',
+ 'details': '52 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770501',
+ 'location': 'Hava, New Capital City, Cairo',
+ 'ownership': 'Primary',
+ 'price': '1,965,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45657867-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657868-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657869-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657870-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657871-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657902-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657903-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657904-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657905-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657906-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657907-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657908-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657909-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657910-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45657911-800x600.jpeg'],
+ 'property_type': 'Apartment',
+ 'reference_number': 'Bayut - 5000329-dNinEp',
+ 'title': 'The strongest investment opportunity in the heart of the '
+          'administrative capital. Own your unit in the R8 area with the best '
+          'payment plans extending up to 14 years and a down payment starting '
+          'from 10%, and a fully integrated compound with all services.',
+ 'url': 'https://www.bayut.eg/en/property/details-503770501.html'}
+2026-07-11 23:20:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770521.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:45 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:45 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770521.html', 'reference_number': 'Bayut - AN603', 'id': '503770521', 'broker_display_name': 'i zone', 'title': 'Best Price Fully Furnished Twin House for Sale in Mivida Parcel 16 New Cairo with a Built up Area of 227 sqm and a Land Area of 291 sqm', 'property_type': 'Twin House', 'description': 'Built up Area 227 sqm Land Area 291 sqm 3 Bedrooms 3 Bathrooms Contact AN603 Maid Room Fully Furnished Fully Finished Ready for Delivery Prime Location Price EGP 37,500,000 Mivida Parcel 16 is one of the premium phases within Mivida by Emaar in New Cairo, featuring modern architecture, vast green landscapes, integrated facilities, and 24/7 security with easy access to South 90 Street, the American University in Cairo, and major roads. i zone specializes in sales and rentals with real market experience. We provide premium units, trusted service, transparency, and fast execution without wasting your time.', 'location': 'Mivida Compound, 5th Settlement, New Cairo, Cairo', 'price': '37,500,000', 'currency': 'EGP', 'bedrooms': '3', 'bathrooms': '3', 'furnished': 'Furnished', 'amenities': '', 'details': '227 Sq. M.', 'agent_name': 'Eman Shaker', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45658114-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658125-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658126-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658127-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658128-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658129-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658130-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658131-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658132-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45658133-800x600.jpeg'], 'completion_status': 'Ready', 'ownership': 'Resale'}
+2026-07-11 23:20:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770521.html>
+{'agent_name': 'Eman Shaker',
+ 'amenities': '',
+ 'bathrooms': '3',
+ 'bedrooms': '3',
+ 'broker_display_name': 'i zone',
+ 'completion_status': 'Ready',
+ 'currency': 'EGP',
+ 'description': 'Built up Area 227 sqm Land Area 291 sqm 3 Bedrooms 3 '
+                'Bathrooms Contact AN603 Maid Room Fully Furnished Fully '
+                'Finished Ready for Delivery Prime Location Price EGP '
+                '37,500,000 Mivida Parcel 16 is one of the premium phases '
+                'within Mivida by Emaar in New Cairo, featuring modern '
+                'architecture, vast green landscapes, integrated facilities, '
+                'and 24/7 security with easy access to South 90 Street, the '
+                'American University in Cairo, and major roads. i zone '
+                'specializes in sales and rentals with real market experience. '
+                'We provide premium units, trusted service, transparency, and '
+                'fast execution without wasting your time.',
+ 'details': '227 Sq. M.',
+ 'furnished': 'Furnished',
+ 'id': '503770521',
+ 'location': 'Mivida Compound, 5th Settlement, New Cairo, Cairo',
+ 'ownership': 'Resale',
+ 'price': '37,500,000',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45658114-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658125-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658126-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658127-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658128-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658129-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658130-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658131-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658132-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45658133-800x600.jpeg'],
+ 'property_type': 'Twin House',
+ 'reference_number': 'Bayut - AN603',
+ 'title': 'Best Price Fully Furnished Twin House for Sale in Mivida Parcel 16 '
+          'New Cairo with a Built up Area of 227 sqm and a Land Area of 291 '
+          'sqm',
+ 'url': 'https://www.bayut.eg/en/property/details-503770521.html'}
+2026-07-11 23:20:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/property/details-503770561.html> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/)
+2026-07-11 23:20:46 [bayut] INFO: ========== ITEM RECEIVED ==========
+2026-07-11 23:20:46 [bayut] INFO: {'url': 'https://www.bayut.eg/en/property/details-503770561.html', 'reference_number': 'Bayut - 5000410-sBvMsG', 'id': '503770561', 'broker_display_name': 'Egypt Best Properties (EBP)', 'title': 'Full Sea View 2 Bedrooms Chalet Direct On Marina Up To 10 Years Plan At Ras El-hekma North Coast', 'property_type': 'Chalet', 'description': "New Launch | Fully Finished 2 Bedrooms Sea Front Chalet Direct On Marina At Salt By Tatweer Misr With Low Downpayment & Flexible Installments Up To 10 Years To Recive The Full Details Please Contact Me At Chalet Details: 2 Bedrooms 2 Bathrooms 120 BUA Prime Location Direct On Marina With Full Sea View Fully Finished _______ Location Prime Location In Ras El Hekma – North Coast Easy Access Via: Fouka Road Dabaa Road International Coastal Road Approximately 3 Hours From Cairo Approximately 2 Hours From Alexandria _______ About The Project Salt is one of Tatweer Misr's newest luxury beachfront destinations in Ras El Hekma, offering an elevated coastal lifestyle inspired by modern architecture, breathtaking Mediterranean views, and world-class hospitality. The project features crystal-clear waters, white sandy beaches, expansive landscaped green spaces, premium leisure facilities, and integrated services, creating a vibrant resort-style community that combines luxury living, relaxation, and exceptional investment potential. ________ About The Developer Developed By Tatweer Misr, one of Egypt's leading real estate developers, renowned for delivering innovative residential and coastal destinations distinguished by exceptional quality, sustainable design, and outstanding long-term investment value. _______ #Salt #TatweerMisr #RasElHekma #NorthCoast #ChaletForSale #FullyFinished #NewLaunch #SeaView #LuxuryLiving #BeachfrontLiving #Installments #RealEstateEgypt #InvestmentOpportunity #NorthCoastProperties #HolidayHome", 'location': 'Fouka Bay, North Coast, Matruh', 'price': '10,020,700', 'currency': 'EGP', 'bedrooms': '2', 'bathrooms': '2', 'furnished': 'Unfurnished', 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | Electricity Backup | Pets Allowed | Electricity Meter | Centrally Air-Conditioned | Sea view | Central Heating | Water Meter | Double Glazed Windows | Storage Areas | Natural Gas | Landline | Study Room | Balcony or Terrace | Lobby in Building | Service Elevators | Reception/Waiting Room | First Aid Medical Center | Gym or Health Club | Facilities for Disabled | Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center | Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria or Canteen | Waste Disposal | Maintenance Staff | Cleaning Services | Business Center | Conference Room | Security Staff | CCTV Security | Shared Kitchen | Laundry Room | Laundry Facility | Broadband Internet | Satellite/Cable TV | Intercom | 24 Hours Concierge | Maids Room | Freehold', 'details': '120 Sq. M.', 'agent_name': 'Seif Mahmoud', 'property_image_urls': ['https://images.bayut.eg/thumbnails/45659711-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659712-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659713-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659714-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659715-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659716-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659717-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659718-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659719-800x600.jpeg', 'https://images.bayut.eg/thumbnails/45659720-800x600.jpeg'], 'completion_status': 'Off-Plan', 'ownership': 'Primary'}
+2026-07-11 23:20:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.bayut.eg/en/property/details-503770561.html>
+{'agent_name': 'Seif Mahmoud',
+ 'amenities': 'Built in Kitchen Appliances | Furnished | Covered parking | '
+              'Electricity Backup | Pets Allowed | Electricity Meter | '
+              'Centrally Air-Conditioned | Sea view | Central Heating | Water '
+              'Meter | Double Glazed Windows | Storage Areas | Natural Gas | '
+              'Landline | Study Room | Balcony or Terrace | Lobby in Building '
+              '| Service Elevators | Reception/Waiting Room | First Aid '
+              'Medical Center | Gym or Health Club | Facilities for Disabled | '
+              'Swimming Pool | Jacuzzi | Sauna | Steam Room | Day Care Center '
+              '| Kids Play Area | Lawn or Garden | Barbeque Area | Cafeteria '
+              'or Canteen | Waste Disposal | Maintenance Staff | Cleaning '
+              'Services | Business Center | Conference Room | Security Staff | '
+              'CCTV Security | Shared Kitchen | Laundry Room | Laundry '
+              'Facility | Broadband Internet | Satellite/Cable TV | Intercom | '
+              '24 Hours Concierge | Maids Room | Freehold',
+ 'bathrooms': '2',
+ 'bedrooms': '2',
+ 'broker_display_name': 'Egypt Best Properties (EBP)',
+ 'completion_status': 'Off-Plan',
+ 'currency': 'EGP',
+ 'description': 'New Launch | Fully Finished 2 Bedrooms Sea Front Chalet '
+                'Direct On Marina At Salt By Tatweer Misr With Low Downpayment '
+                '& Flexible Installments Up To 10 Years To Recive The Full '
+                'Details Please Contact Me At Chalet Details: 2 Bedrooms 2 '
+                'Bathrooms 120 BUA Prime Location Direct On Marina With Full '
+                'Sea View Fully Finished _______ Location Prime Location In '
+                'Ras El Hekma – North Coast Easy Access Via: Fouka Road Dabaa '
+                'Road International Coastal Road Approximately 3 Hours From '
+                'Cairo Approximately 2 Hours From Alexandria _______ About The '
+                "Project Salt is one of Tatweer Misr's newest luxury "
+                'beachfront destinations in Ras El Hekma, offering an elevated '
+                'coastal lifestyle inspired by modern architecture, '
+                'breathtaking Mediterranean views, and world-class '
+                'hospitality. The project features crystal-clear waters, white '
+                'sandy beaches, expansive landscaped green spaces, premium '
+                'leisure facilities, and integrated services, creating a '
+                'vibrant resort-style community that combines luxury living, '
+                'relaxation, and exceptional investment potential. ________ '
+                "About The Developer Developed By Tatweer Misr, one of Egypt's "
+                'leading real estate developers, renowned for delivering '
+                'innovative residential and coastal destinations distinguished '
+                'by exceptional quality, sustainable design, and outstanding '
+                'long-term investment value. _______ #Salt #TatweerMisr '
+                '#RasElHekma #NorthCoast #ChaletForSale #FullyFinished '
+                '#NewLaunch #SeaView #LuxuryLiving #BeachfrontLiving '
+                '#Installments #RealEstateEgypt #InvestmentOpportunity '
+                '#NorthCoastProperties #HolidayHome',
+ 'details': '120 Sq. M.',
+ 'furnished': 'Unfurnished',
+ 'id': '503770561',
+ 'location': 'Fouka Bay, North Coast, Matruh',
+ 'ownership': 'Primary',
+ 'price': '10,020,700',
+ 'property_image_urls': ['https://images.bayut.eg/thumbnails/45659711-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659712-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659713-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659714-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659715-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659716-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659717-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659718-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659719-800x600.jpeg',
+                         'https://images.bayut.eg/thumbnails/45659720-800x600.jpeg'],
+ 'property_type': 'Chalet',
+ 'reference_number': 'Bayut - 5000410-sBvMsG',
+ 'title': 'Full Sea View 2 Bedrooms Chalet Direct On Marina Up To 10 Years '
+          'Plan At Ras El-hekma North Coast',
+ 'url': 'https://www.bayut.eg/en/property/details-503770561.html'}
+2026-07-11 23:20:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bayut.eg/en/egypt/properties-for-sale/page-3/> (referer: https://www.bayut.eg/en/egypt/properties-for-sale/page-2/)
+2026-07-11 23:20:47 [bayut] INFO: Processing listing page 3
+2026-07-11 23:20:47 [bayut] INFO: Found 24 property cards
+2026-07-11 23:20:47 [bayut] INFO: SQLite connection closed.
+2026-07-11 23:20:47 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 7370,
+ 'downloader/request_count': 20,
+ 'downloader/request_method_count/GET': 20,
+ 'downloader/response_bytes': 6048804,
+ 'downloader/response_count': 20,
+ 'downloader/response_status_count/200': 20,
+ 'elapsed_time_seconds': 27.46498019200044,
+ 'finish_reason': 'closespider_itemcount',
+ 'finish_time': datetime.datetime(2026, 7, 11, 17, 50, 47, 733780, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 28218053,
+ 'httpcompression/response_count': 20,
+ 'item_scraped_count': 16,
+ 'items_per_minute': 35.55555555555556,
+ 'log_count/DEBUG': 36,
+ 'log_count/INFO': 42,
+ 'memusage/max': 68009984,
+ 'memusage/startup': 68009984,
+ 'request_depth_max': 3,
+ 'response_received_count': 20,
+ 'responses_per_minute': 44.44444444444444,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 19,
+ 'scheduler/dequeued/memory': 19,
+ 'scheduler/enqueued': 76,
+ 'scheduler/enqueued/memory': 76,
+ 'start_time': datetime.datetime(2026, 7, 11, 17, 50, 20, 268797, tzinfo=datetime.timezone.utc)}
+2026-07-11 23:20:47 [scrapy.core.engine] INFO: Spider closed (closespider_itemcount)

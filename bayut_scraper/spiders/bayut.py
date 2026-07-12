@@ -31,14 +31,12 @@ class BayutSpider(scrapy.Spider):
 
         next_page = response.xpath('//a[@title="Next"]/@href').get()
 
-        if next_page and self.page_count < 3:
-            self.logger.info("Following next page: %s", next_page)
-
+        if next_page:
             yield response.follow(
                 next_page,
                 callback=self.parse
             )
-    
+            
     def parse_property(self, response):
         item = BayutScraperItem()
 
@@ -77,6 +75,7 @@ class BayutSpider(scrapy.Spider):
         item["description"] = self.clean_text(
             " ".join(description)
         )
+
 
         #  location   
         item["location"] = self.clean_text(
@@ -141,6 +140,7 @@ class BayutSpider(scrapy.Spider):
             '//div[@aria-label="Gallery dialog hidden"]'
             '//div[@aria-label="Gallery dialog photo grid"]'
             '//img/@src').getall()
+        
         
         #Completion_status
         item["completion_status"] = self.clean_text(

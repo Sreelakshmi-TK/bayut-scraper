@@ -58,10 +58,10 @@ DOWNLOAD_DELAY = 1
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "bayut_scraper.pipelines.BayutScraperPipeline": 300,
-#}
-
+ITEM_PIPELINES = {
+    "bayut_scraper.pipelines.DeduplicationPipeline": 300,
+    "bayut_scraper.pipelines.SQLitePipeline": 400,
+}
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
