@@ -6,17 +6,12 @@ class BayutSpider(scrapy.Spider):
     
     start_urls = ["https://www.bayut.eg/en/egypt/properties-for-sale/"]
 
-    page_count = 0
 
     @staticmethod
     def clean_text(value):
         return " ".join(value.split()) if value else None
 
     def parse(self, response):
-        self.page_count += 1
-
-        self.logger.info("Processing listing page %d", self.page_count)
-
         property_cards = response.xpath("//li[@role='article']")
         self.logger.info("Found %d property cards", len(property_cards))
         
@@ -77,7 +72,7 @@ class BayutSpider(scrapy.Spider):
         )
 
 
-        #  location   
+        # location   
         item["location"] = self.clean_text(
             response.xpath('//div[@aria-label="Property header"]/text()').get()
         )
@@ -141,7 +136,7 @@ class BayutSpider(scrapy.Spider):
             '//div[@aria-label="Gallery dialog photo grid"]'
             '//img/@src').getall()
         
-        
+
         #Completion_status
         item["completion_status"] = self.clean_text(
             response.xpath('//span[@aria-label="Completion status"]/text()').get()
