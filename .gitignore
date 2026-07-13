@@ -4,8 +4,3 @@ __pycache__/
 .pytest_cache/
 .vscode/
 
-#Generated outputs
-bayut.db
-output.json
-output.csv
-error.log
